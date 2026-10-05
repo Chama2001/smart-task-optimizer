@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Task & Habit Optimizer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            width: 350px;
+        }
+        h2 { text-align: center; color: #38bdf8; margin-bottom: 20px; }
+        .input-group { display: flex; gap: 10px; margin-bottom: 20px; }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #475569;
+            background: #0f172a;
+            color: white;
+            border-radius: 6px;
+        }
+        button {
+            padding: 10px 15px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover { background: #1d4ed8; }
+        ul { list-style: none; padding: 0; }
+        li {
+            background: #334155;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .delete-btn { background: #ef4444; padding: 5px 10px; font-size: 12px; }
+        .delete-btn:hover { background: #dc2626; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Smart Task AI</h2>
+        <div class="input-group">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById('task-input');
+            const taskText = input.value.trim();
+            if (taskText === '') return;
+
+            const list = document.getElementById('task-list');
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${taskText}</span> <button class="delete-btn" onclick="this.parentElement.remove()">Delete</button>`;
+            
+            list.appendChild(li);
+            input.value = '';
+        }
+    </script>
+
+</body>
+</html>
