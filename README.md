@@ -1,4 +1,4 @@
-# AI Smart Task & Habit Optimizer 🤖✨
+# AI Smart Task & Habit Optimizer. 🤖✨
 
 A minimalist productivity web application built with HTML, CSS, and JavaScript designed to help organize daily tasks and build consistent habits efficiently.
 
